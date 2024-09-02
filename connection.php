@@ -1,4 +1,5 @@
 <?php
+// grants acces to the database and the location in the database in which the tables are stored */
 $servername = "localhost";
 $username = "root";
 $password = "";

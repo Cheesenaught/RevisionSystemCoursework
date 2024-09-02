@@ -15,7 +15,7 @@ switch($_POST["role"]){
     }
     $hashed_password = password_hash($_POST["passwd"], PASSWORD_DEFAULT);
     array_map("htmlspecialchars", $_POST);
-    $stmt = $conn->prepare("INSERT INTO tblusers (UserID,AccessLvl,Gender,Forename,Password,House,Year ,Role)VALUES (null,:gender,:surname,:forename,:password,:house,:year,:role)");
+    $stmt = $conn->prepare("INSERT INTO tblusers (UserID,AccessLvl,Gender,Forename,Surname,Email,Password)VALUES (null,:AccessLvl,:Gender,:Forename,:Surname,:Email,:password,:)");
     $stmt->bindParam(':forename', $_POST["forename"]);
     $stmt->bindParam(':surname', $_POST["surname"]);
     $stmt->bindParam(':house', $_POST["house"]);
@@ -34,3 +34,10 @@ echo $_POST["year"]."<br>";
 echo $_POST["gender"]."<br>";
 echo $_POST["role"]."<br>";
 ?>
+(UserID INT(4) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+AccessLvl VARCHAR(1) NOT NULL,
+Gender VARCHAR(1) NOT NULL,
+Forename VARCHAR(20) NOT NULL,
+Surname VARCHAR(20) NOT NULL,
+Email VARCHAR(50) NOT NULL,
+Password VARCHAR(20) NOT NULL)

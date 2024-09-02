@@ -1,5 +1,6 @@
 <?php
 include_once("connection.php");
+//Creates the tabke TblUsers*/
 $stmt = $conn->prepare("DROP TABLE IF EXISTS TblUsers;
 CREATE TABLE TblUsers 
 (UserID INT(4) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -11,6 +12,8 @@ Email VARCHAR(50) NOT NULL,
 Password VARCHAR(20) NOT NULL)");
 $stmt->execute();
 $stmt->closeCursor();
+
+//Creates the tabke TblUserClassInters*/
 $$stmt = $conn->prepare("DROP TABLE IF EXISTS TblUserClassInters;
 CREATE TABLE TblUserClassInters
 (UserID INT(4) NOT NULL PRIMARY KEY,
