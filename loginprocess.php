@@ -40,5 +40,4 @@ $conn=null;
 }else{
     header('Location: login.php');
 }
-
 ?>

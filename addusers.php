@@ -2,37 +2,37 @@
 include_once("connection.php");
 
 header('Location: users.php');
-switch($_POST["role"]){
+switch($_POST["AccessLvl"]){
   case "Pupil":
-    $role=0;
+    $AccessLvl=0;
     break;
   case "Teacher":
-    $role=1;
+    $AccessLvl=1;
     break;
   case "Admin":
-    $role=2;
+    $AccessLvl=2;
     break;
     }
-    $hashed_password = password_hash($_POST["passwd"], PASSWORD_DEFAULT);
+    $hashed_password = password_hash($_POST["Password"], PASSWORD_DEFAULT);
     array_map("htmlspecialchars", $_POST);
-    $stmt = $conn->prepare("INSERT INTO tblusers (UserID,AccessLvl,Gender,Forename,Surname,Email,Password)VALUES (null,:AccessLvl,:Gender,:Forename,:Surname,:Email,:password,:)");
-    $stmt->bindParam(':forename', $_POST["forename"]);
-    $stmt->bindParam(':surname', $_POST["surname"]);
-    $stmt->bindParam(':house', $_POST["house"]);
-    $stmt->bindParam(':year', $_POST["year"]);
-    $stmt->bindParam(':password', $hashed_password);
-    $stmt->bindParam(':gender', $_POST["gender"]);
-    $stmt->bindParam(':role', $role);
+    $stmt = $conn->prepare("INSERT INTO TblUsers (UserID,AccessLvl,Gender,Forename,Surname,Email,Password)VALUES (null,:AccessLvl,:Gender,:Forename,:Surname,:Email,:Password,:)");
+    $stmt->bindParam(':Forename', $_POST["Forename"]);
+    $stmt->bindParam(':Surname', $_POST["Surname"]);
+    $stmt->bindParam(':Gender', $_POST["Gender"]);
+    $stmt->bindParam(':Email', $_POST["Email"]);
+    $stmt->bindParam(':Password', $hashed_password);
+    $stmt->bindParam(':AccessLvl', $AccessLvl);
     $stmt->execute();
     $conn=null;
     
-echo $_POST["forename"]."<br>";
-echo $_POST["surname"]."<br>";
-echo $_POST["passwd"]."<br>";
-echo $_POST["house"]."<br>";
-echo $_POST["year"]."<br>";
-echo $_POST["gender"]."<br>";
-echo $_POST["role"]."<br>";
+echo $_POST["AccessLvl"]."<br>";
+echo $_POST["Gender"]."<br>";
+echo $_POST["Forename"]."<br>";
+echo $_POST["Surname"]."<br>";
+echo $_POST["Email"]."<br>";
+echo $_POST["Password"]."<br>";
+
+//print_r($_POST);*/
 ?>
 (UserID INT(4) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 AccessLvl VARCHAR(1) NOT NULL,
