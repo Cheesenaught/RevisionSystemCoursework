@@ -31,8 +31,7 @@ Year INT(2) NOT NULL,
 Email VARCHAR(50) NOT NULL,
 TeacherName VARCHAR(20) NOT NULL,
 Open INT(1) NOT NULL,
-AssignmentID INT(4) AUTO_INCREMENT,
-ClassTeacherID INT(4) AUTO_INCREMENT,
+AssignmentID INT(4),
 Password VARCHAR(20) NOT NULL)");
 $stmt->execute();
 $stmt->closeCursor();
@@ -41,6 +40,7 @@ $stmt->closeCursor();
 $stmt = $conn->prepare("DROP TABLE IF EXISTS TblTeachers;
 CREATE TABLE TblTeachers
 (ClassTeacherID INT(4) NOT NULL PRIMARY KEY,
+ClassID INT(4) NOT NULL,
 UserID INT(4) NOT NULL)");
 $stmt->execute();
 $stmt->closeCursor();

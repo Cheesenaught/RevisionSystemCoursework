@@ -3,7 +3,7 @@ include_once ("connection.php");
 session_start();
 print_r($_POST);
 array_map("htmlspecialchars", $_POST);
-$stmt = $conn->prepare("SELECT * FROM tblusers WHERE surname =:username ;" );
+$stmt = $conn->prepare("SELECT * FROM TblUsers WHERE surname =:username ;" );
 $stmt->bindParam(':username', $_POST['Username']);
 $stmt->execute();
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
@@ -28,7 +28,7 @@ if(password_verify($attempt,$hashed)){
 
 }
 $conn=null;
- if(password_verify($attempt,$hashed)){
+/* if(password_verify($attempt,$hashed)){
     $_SESSION['name']=$row["Surname"];
     if (!isset($_SESSION['backURL'])){
         $backURL= "/"; //Sets a default destination if no BackURL set (parent dir)
@@ -39,5 +39,6 @@ $conn=null;
     header('Location: ' . $backURL);
 }else{
     header('Location: login.php');
-}
+} */
+
 ?>
