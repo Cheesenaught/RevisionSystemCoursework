@@ -26,7 +26,7 @@ if(password_verify($attempt,$hashed)){
    # header('Location: login.php');
 }
 
-}
+}`  
 $conn=null;
 /* if(password_verify($attempt,$hashed)){
     $_SESSION['name']=$row["Surname"];
