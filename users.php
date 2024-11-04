@@ -26,6 +26,7 @@ session_start();
   Gender:<select name="gender">
     <option value="M">Male</option>
     <option value="F">Female</option>
+    <option value="U">Prefer not to say</option>
   </select>
   <br>
   <!--Next 3 lines create a radio button which we can use to select the user role-->
