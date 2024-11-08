@@ -18,12 +18,12 @@ session_start();
 ?>
 
 <form action="addusers.php" method = "POST">
-  First name:<input type="text" name="forename"><br>
-  Last name:<input type="text" name="surname"><br>
-  Password:<input type="password" name="passwd"><br>
-  Email:<input type="text" name="email"><br>
+  First name:<input type="text" name="Forename"><br>
+  Last name:<input type="text" name="Surname"><br>
+  Password:<input type="password" name="Password"><br>
+  Email:<input type="text" name="Email"><br>
   <!--Creates a drop down list-->
-  Gender:<select name="gender">
+  Gender:<select name="Gender">
     <option value="M">Male</option>
     <option value="F">Female</option>
     <option value="U">Prefer not to say</option>
