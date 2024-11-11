@@ -1,16 +1,7 @@
 <?php
 include_once("connection.php");
 
-header('Location: class.php');
-switch($_POST["Open"]){
-  case "Closed":
-    $Open=0;
-    break;
-  case "Open":
-    $Open=1;
-    break;
-
-    }
+//header('Location: class.php');
     $hashed_password = password_hash($_POST["Password"], PASSWORD_DEFAULT);
     array_map("htmlspecialchars", $_POST);
     $stmt = $conn->prepare("INSERT INTO TblClasses (ClassID,Subject,ClassName,Email,TeacherName,Open,ClassTeacherID,Password)VALUES (null,:Subject,:ClassName,:Email,:TeacherName,:null,:ClassTeacherID,:Password,:)");
@@ -20,7 +11,7 @@ switch($_POST["Open"]){
     $stmt->bindParam(':Email', $_POST["Email"]);
     $stmt->bindParam(':TeacherName', $_POST["TeacherName"]);
     $stmt->bindParam(':Open', $Open);
-    $stmt->bindParam(':ClassTeacherID', $_POST["ClassTeacherID"]);
+    $stmt->bindParam(':ClassTeacherID', $_SESSION["UserID"]);
     $stmt->bindParam(':Password', $hashed_password);
     $stmt->execute();
     $conn=null;

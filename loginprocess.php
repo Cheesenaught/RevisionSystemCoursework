@@ -11,11 +11,11 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
     print_r($row);
     $hashed= $row['Password'];
   
-    $attempt= $_POST['Pword'];
+    $attempt= $_POST['Password'];
 if(password_verify($attempt,$hashed)){
     $_SESSION['name']=$row["Surname"];
     if (!isset($_SESSION['backURL'])){
-        $backURL= "login.php"; //Sets a default destination if no BackURL set (parent dir)
+        $backURL= "homePage.html"; //Sets a default destination if no BackURL set (parent dir)
     }else{
         $backURL=$_SESSION['backURL'];
     }
@@ -23,25 +23,9 @@ if(password_verify($attempt,$hashed)){
     header('Location: ' . $backURL);
 }else{
     echo("fail");
-   # header('Location: login.php');
+    header('Location: login.php');
 }
 
-}`  
+}  
 $conn=null;
-/* if(password_verify($attempt,$hashed)){
-    $_SESSION['name']=$row["Surname"];
-    if (!isset($_SESSION['backURL'])){
-        $backURL= "/"; //Sets a default destination if no BackURL set (parent dir)
-    }else{
-        $backURL=$_SESSION['backURL'];
-    }
-    unset($_SESSION['backURL']);
-    header('Location: ' . $backURL);
-}else{
-    header('Location: login.php');
-} */
-
 ?>
-
-
-

@@ -2,21 +2,21 @@
 <html>
 <head>
     
-    <title>Add User</title>
+    <title>Add Assignment</title>
     
 </head>
 <body>
 <?php
-session_start(); 
-if (!isset($_SESSION['name']))
-{   
-    $_SESSION['backURL'] = $_SERVER['REQUEST_URI'];
-    header("Location:login.php");
-}
+//session_start(); 
+//if (!isset($_SESSION['name']))
+//{   
+//    $_SESSION['backURL'] = $_SERVER['REQUEST_URI'];
+//    header("Location:login.php");
+//}
 ?>
 
 <form action="addusers.php" method = "POST">
-  First name:<input type="text" name="Forename"><br>
+  Date of Job:<input type="date" name="DateOfJob"><br>
   Last name:<input type="text" name="Surname"><br>
   Password:<input type="password" name="Password"><br>
   Email:<input type="text" name="Email"><br>
