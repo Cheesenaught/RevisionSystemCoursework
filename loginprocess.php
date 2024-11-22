@@ -1,7 +1,7 @@
 <?php
 include_once ("connection.php");
 session_start();
-print_r($_POST);
+
 array_map("htmlspecialchars", $_POST);
 $stmt = $conn->prepare("SELECT * FROM TblUsers WHERE surname =:username ;" );
 $stmt->bindParam(':username', $_POST['Username']);
@@ -14,8 +14,9 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
     $attempt= $_POST['Password'];
 if(password_verify($attempt,$hashed)){
     $_SESSION['name']=$row["Surname"];
+    $_SESSION['UserID']=$row["UserID"];
     if (!isset($_SESSION['backURL'])){
-        $backURL= "homePage.html"; //Sets a default destination if no BackURL set (parent dir)
+        $backURL= "class.php"; //Sets a default destination if no BackURL set (parent dir)
     }else{
         $backURL=$_SESSION['backURL'];
     }

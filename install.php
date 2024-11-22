@@ -49,6 +49,7 @@ CREATE TABLE TblAssignments
 (AssignmentID INT(4) NOT NULL PRIMARY KEY,
 ClassID INT(4) NOT NULL,
 SetID INT(4) NOT NULL,
+DueDate DATE NOT NULL,
 Description VARCHAR(250) NOT NULL)");
 $stmt->execute();
 $stmt->closeCursor();

@@ -9,7 +9,7 @@
 
 
 <?php
-session_start(); 
+//session_start(); 
 //if (!isset($_SESSION['name']))
 //{   
 //    $_SESSION['backURL'] = $_SERVER['REQUEST_URI'];
@@ -24,7 +24,7 @@ session_start();
   Teacher name:<input type="text" name="TeacherName"><br>
   Password:<input type="password" name="Password"><br>
   <!--Creates a drop down list-->
-  <br>
+  Open:<br>
   <!--Next 3 lines create a radio button which we can use to select the user role-->
   <input type="radio" name="Open" value="1" checked> Yes<br>
   <input type="radio" name="Open" value="0"> No<br>
@@ -42,3 +42,4 @@ $stmt->execute();
 ?>
 </body>
 </html>
+

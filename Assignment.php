@@ -16,22 +16,11 @@
 ?>
 
 <form action="addusers.php" method = "POST">
-  Date of Job:<input type="date" name="DateOfJob"><br>
-  Last name:<input type="text" name="Surname"><br>
-  Password:<input type="password" name="Password"><br>
-  Email:<input type="text" name="Email"><br>
-  <!--Creates a drop down list-->
-  Gender:<select name="Gender">
-    <option value="M">Male</option>
-    <option value="F">Female</option>
-    <option value="U">Prefer not to say</option>
-  </select>
+  Due Date:<input type="date" name="DateOfJob"><br>
+  Description:<br><textarea cols="60" rows="9"></textarea>
   <br>
   <!--Next 3 lines create a radio button which we can use to select the user role-->
-  <input type="radio" name="AccessLvl" value="Pupil" checked> Pupil<br>
-  <input type="radio" name="AccessLvl" value="Teacher"> Teacher<br>
-  <input type="radio" name="AccessLvl" value="Admin"> Admin<br>
-  <input type="submit" value="Add User">
+  <input type="submit" value="Add Assignment">
 </form>
 <?php
 include_once('connection.php');
