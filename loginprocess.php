@@ -16,7 +16,7 @@ if(password_verify($attempt,$hashed)){
     $_SESSION['name']=$row["Surname"];
     $_SESSION['UserID']=$row["UserID"];
     if (!isset($_SESSION['backURL'])){
-        $backURL= "class.php"; //Sets a default destination if no BackURL set (parent dir)
+        $backURL= "homepage.php"; //Sets a default destination if no BackURL set (parent dir)
     }else{
         $backURL=$_SESSION['backURL'];
     }

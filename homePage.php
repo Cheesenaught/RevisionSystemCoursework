@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <?php include_once("navbar.php") ?>
   <style>
   body {
     font: 400 17px/1.8 Lato, sans-serif;
@@ -147,32 +148,7 @@
   }
   </style>
 </head>
-<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
 
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="#myPage"></a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav navbar-right"style="margin-top:15px">
-        <li><a href="setPage.html">Sets</a></li>
-        <li><a href="#Classes">Classes</a></li>
-        <li><a href="#Members">Assignments</a></li>
-        <li><a href="settings.html"><img src="settings.png" alt="Settings" style="height: 25px; width: 25px;"></a></li>
-        <li><a href="#loggedOut.html"><img src="logOut.png" alt="Log out" style="height: 25px; width: 25px;"></a></li>
-        <li class="dropdown"> 
-          </ul>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
 
 
 <!--<div id="myCarousel" class="carousel slide" data-ride="carousel" style="margin-top:75px;">

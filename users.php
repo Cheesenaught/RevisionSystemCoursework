@@ -1,18 +1,12 @@
 <!DOCTYPE html>
 <html>
-<head>
-    
+<head>   
     <title>Add User</title>
-    
+    <?php include_once("navbar.php") ?>  
 </head>
 <body>
 <?php
 session_start(); 
-if (!isset($_SESSION['name']))
-{   
-    $_SESSION['backURL'] = $_SERVER['REQUEST_URI'];
-    header("Location:login.php");
-}
 ?>
 
 <form action="addusers.php" method = "POST">
@@ -22,15 +16,15 @@ if (!isset($_SESSION['name']))
   Email:<input type="text" name="Email"><br>
   <!--Creates a drop down list-->
   Gender:<select name="Gender">
-    <option value="M">Male</option>
-    <option value="F">Female</option>
-    <option value="U">Prefer not to say</option>
+    <option value="0">Male</option>
+    <option value="1">Female</option>
+    <option value="2">Prefer not to say</option>
   </select>
   <br>
-  <!--Next 3 lines create a radio button which we can use to select the user role-->
-  <input type="radio" name="AccessLvl" value="Pupil" checked> Pupil<br>
-  <input type="radio" name="AccessLvl" value="Teacher"> Teacher<br>
-  <input type="radio" name="AccessLvl" value="Admin"> Admin<br>
+  <!--Next 3 lines create a radio button which we can use to select the Access Level-->
+  <input type="radio" name="AccessLvl" value="0" checked> Pupil<br>
+  <input type="radio" name="AccessLvl" value="1"> Teacher<br>
+  <input type="radio" name="AccessLvl" value="2"> Admin<br>
   <input type="submit" value="Add User">
 </form>
 <?php

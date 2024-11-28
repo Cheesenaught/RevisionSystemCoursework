@@ -1,20 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    
     <title>Page title</title>
-    
+    <?php include_once("navbar.php") ?>
 </head>
 <body>
-
-
 <?php
-//session_start(); 
-//if (!isset($_SESSION['name']))
-//{   
-//    $_SESSION['backURL'] = $_SERVER['REQUEST_URI'];
-//    header("Location:login.php");
-//}
+session_start(); 
 ?>
 
 <form action="addClass.php" method = "POST">
@@ -34,11 +26,6 @@
 include_once('connection.php');
 $stmt = $conn->prepare("SELECT * FROM TblClasses");
 $stmt->execute();
-//while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
-//{
-//echo($row["Forename"].' '.$row["Surname"]."-".$row["House"].'<br>');
-//}
-
 ?>
 </body>
 </html>
