@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html>
+<?php
+session_start();
+?>
 <head>
 <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -28,8 +31,16 @@
         <li><a href="setPage.html">Sets</a></li>
         <li><a href="#Classes">Classes</a></li>
         <li><a href="#Members">Assignments</a></li>
-        <li><a href="settings.html"><img src="settings.png" alt="Settings" style="height: 25px; width: 25px;"></a></li>
-        <li><a href="#loggedOut.html"><img src="logOut.png" alt="Log out" style="height: 25px; width: 25px;"></a></li>
+        <li><a href="settings.php"><img src="settings.png" alt="Settings" style="height: 25px; width: 25px;"></a></li>
+        <?php
+        if(!isset ($_SESSION["UserID"])){
+          echo($_SESSION["UserID"]);
+          echo('<li><a href="LogOut.php"><img src="logOut.png" alt="Log out" style="height: 25px; width: 25px;"></a></li>');
+        }
+        else{
+          echo('<li><a href="login.php">login</a></li>');
+        }
+        ?>
         <li class="dropdown"> 
           </ul>
         </li>

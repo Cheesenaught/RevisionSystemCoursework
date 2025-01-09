@@ -13,13 +13,6 @@ header('Location: homePage.php');
     $stmt->bindParam(':AccessLvl', $_POST["AccessLvl"]);
     $stmt->execute();
     $conn=null;
-    
-echo $_POST["AccessLvl"]."<br>";
-echo $_POST["Gender"]."<br>";
-echo $_POST["Forename"]."<br>";
-echo $_POST["Surname"]."<br>";
-echo $_POST["Email"]."<br>";
-echo $_POST["Password"]."<br>";
 
 print_r($_POST);
 ?>
