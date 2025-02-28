@@ -6,25 +6,19 @@
     
 </head>
 <body>
-<?php
-//session_start(); 
-//if (!isset($_SESSION['name']))
-//{   
-//    $_SESSION['backURL'] = $_SERVER['REQUEST_URI'];
-//    header("Location:login.php");
-//}
-?>
 
-<form action="addusers.php" method = "POST">
-  Due Date:<input type="date" name="DateOfJob"><br>
+<form action="addAssignment.php" method = "POST">
+<!--Creates an input box which you can either input the date or use a calender to select the date-->
+  Due Date:<input type="date" name="DueDate"><br>
+<!--Creates a large textbox which allows you to add a paragraph -->
   Description:<br><textarea cols="60" rows="9"></textarea>
   <br>
-  <!--Next 3 lines create a radio button which we can use to select the user role-->
+<!--creates a button to submit the form-->
   <input type="submit" value="Add Assignment">
 </form>
 <?php
 include_once('connection.php');
-$stmt = $conn->prepare("SELECT * FROM TblUsers");
+$stmt = $conn->prepare("SELECT * FROM TblAssignments");
 $stmt->execute();
 ?>
 </body>

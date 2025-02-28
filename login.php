@@ -8,7 +8,7 @@
 </head>
 <body>
 <?php include_once("navbar.php") ?>
-<br><br><br><br><br><br>
+<br><br><br><br><br>
 <form action="loginprocess.php" method= "POST">
  Username:<input type="text" name="Username"><br>
  Password:<input type="password" name="Password"><br>

@@ -16,7 +16,8 @@ $stmt->closeCursor();
 //Creates the tabke TblUserClassInters*/
 $$stmt = $conn->prepare("DROP TABLE IF EXISTS TblUserClassInters;
 CREATE TABLE TblUserClassInters
-(UserID INT(4) NOT NULL PRIMARY KEY,
+(InterID INT(4) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+UserID INT(4) NOT NULL,
 ClassID VARCHAR(1) NOT NULL)");
 $stmt->execute();
 $stmt->closeCursor();
@@ -29,7 +30,7 @@ Subject VARCHAR(20) NOT NULL,
 ClassName VARCHAR(50) NOT NULL,
 Email VARCHAR(50) NOT NULL,
 TeacherName VARCHAR(20) NOT NULL,
-Open INT(1) NOT NULL,
+Open INT(1) NOT NULL,   
 ClassTeacherID INT(4) NOT NULL,
 Password VARCHAR(20) NOT NULL)");
 $stmt->execute();

@@ -29,16 +29,15 @@ session_start();
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right"style="margin-top:15px">
         <li><a href="setPage.html">Sets</a></li>
-        <li><a href="#Classes">Classes</a></li>
+        <li><a href="classesHome.php">Classes</a></li>
         <li><a href="#Members">Assignments</a></li>
         <li><a href="settings.php"><img src="settings.png" alt="Settings" style="height: 25px; width: 25px;"></a></li>
         <?php
         if(!isset ($_SESSION["UserID"])){
-          echo($_SESSION["UserID"]);
-          echo('<li><a href="LogOut.php"><img src="logOut.png" alt="Log out" style="height: 25px; width: 25px;"></a></li>');
+          echo('<li><a href="login.php">login</a></li>');
         }
         else{
-          echo('<li><a href="login.php">login</a></li>');
+          echo('<li><a href="LogOut.php"><img src="logOut.png" alt="Log out" style="height: 25px; width: 25px;"></a></li>');
         }
         ?>
         <li class="dropdown"> 
