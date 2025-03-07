@@ -6,7 +6,10 @@
 </head>
 <body>
 <?php
-session_start(); 
+if(!isset($_COOKIE["PHPSESSID"]))
+{
+  session_start();
+} 
 ?>
 
 <form action="addusers.php" method = "POST">

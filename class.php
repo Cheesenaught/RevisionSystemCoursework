@@ -2,12 +2,13 @@
 <html>
 <head>
     <title>Page title</title>
-    <?php include_once("navbar.php") ?>
+    <?php include_once("navbar.php"); ?>
 </head>
 <body>
 <?php
-session_start(); 
-?>
+session_start();
+include_once('connection.php');
+?>  
 
 <form action="addClass.php" method = "POST">
   Subject:<input type="text" name="Subject"><br>
@@ -23,7 +24,6 @@ session_start();
   <input type="submit" value="Add Class">
 </form>
 <?php
-include_once('connection.php');
 $stmt = $conn->prepare("SELECT * FROM TblClasses");
 $stmt->execute();
 ?>

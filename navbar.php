@@ -2,6 +2,7 @@
 <html>
 <?php
 session_start();
+include_once("functions.php");
 ?>
 <head>
 <meta charset="utf-8">

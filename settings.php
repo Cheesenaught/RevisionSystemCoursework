@@ -6,6 +6,8 @@
     </head>
 <body>
 <?php include_once("navbar.php");
+session_start();
+
 if(isset ($_SESSION["UserID"])){
   $stmt = $conn->prepare("SELECT * FROM TblUsers WHERE UserID = ".$_SESSION["UserID"]);
   $stmt->execute(); 

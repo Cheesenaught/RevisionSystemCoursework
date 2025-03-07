@@ -18,7 +18,7 @@ $$stmt = $conn->prepare("DROP TABLE IF EXISTS TblUserClassInters;
 CREATE TABLE TblUserClassInters
 (InterID INT(4) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 UserID INT(4) NOT NULL,
-ClassID VARCHAR(1) NOT NULL)");
+ClassID INT(4) NOT NULL)");
 $stmt->execute();
 $stmt->closeCursor();
 

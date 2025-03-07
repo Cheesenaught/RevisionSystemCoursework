@@ -1,7 +1,6 @@
 <?php
 include_once ("connection.php");
 session_start();
-
 array_map("htmlspecialchars", $_POST);
 $stmt = $conn->prepare("SELECT * FROM TblUsers WHERE surname =:username ;" );
 $stmt->bindParam(':username', $_POST['Username']);
@@ -16,7 +15,7 @@ if(password_verify($attempt,$hashed)){
     $_SESSION['name']=$row["Surname"];
     $_SESSION['UserID']=$row["UserID"];
     if (!isset($_SESSION['backURL'])){
-        $backURL= "homepage.php"; //Sets a default destination if no BackURL set (parent dir)
+        $backURL= "homePage.php"; //Sets a default destination if no BackURL set (parent dir)
     }else{
         $backURL=$_SESSION['backURL'];
     }

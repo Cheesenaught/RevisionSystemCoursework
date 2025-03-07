@@ -6,6 +6,10 @@
     </head>
 <body>
 <?php include_once("navbar.php");
+if(!isset($_COOKIE["PHPSESSID"]))
+{
+  session_start();
+} 
 if(isset ($_SESSION["UserID"])){
   $stmt = $conn->prepare("SELECT * FROM TblUsers WHERE UserID = ".$_SESSION["UserID"]);
   $stmt->execute(); 
