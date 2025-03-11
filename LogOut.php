@@ -1,8 +1,6 @@
 <?php
-if(isset($_COOKIE["PHPSESSID"]))
-{
-  session_destroy();
-} 
+session_start();
+session_destroy();
 header('Location: homePage.php');
 ?>
 

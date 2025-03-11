@@ -1,9 +1,6 @@
 <?php
 include_once("connection.php");
-if(!isset($_COOKIE["PHPSESSID"]))
-{
-  session_start();
-} 
+session_start();
 header('Location: classesHome.php');
     $stmt = $conn->prepare("INSERT INTO TblQuestions (QuestionID,Question,Answer)VALUES (null,:Question,:Answer)");
     /*binds the variables so they can be added*/

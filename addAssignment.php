@@ -1,9 +1,6 @@
 <?php
 include_once("connection.php");
-if(!isset($_COOKIE["PHPSESSID"]))
-{
-  session_start();
-} 
+session_start();
 
 header('Location: assignment.php');
     array_map("htmlspecialchars", $_POST);

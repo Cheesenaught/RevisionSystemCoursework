@@ -1,14 +1,17 @@
 <?php
 function showRequest($classData){
     echo(
-        '<div class="list-item-container">' . 
-        '<div class="bold-container">' . $classData['ClassName'] . '</div>' . 
-        '<button onclick=Redirect($classData['ClassID'])>--></button>' . 
-        '</div>'
+        '<form action="ClassPage.php">
+        <input type="submit" onclick="' . transfer($classData) . '" />
+        </form>'
     );
 }
-
-function Redirect($ClassID){
-    
+?>
+<?php
+function transfer($ClassData){
+    $_SESSION['ClassID'] = $ClassData['ClassID'];
+    echo($ClassData['ClassID']);
+    /*header('Location: ClassPage.php');*/
+    die();
 }
 ?>

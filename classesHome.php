@@ -1,6 +1,7 @@
 <?php
 session_start();
 include "connection.php";
+unset($_SESSION['ClassID']);
 ?>
 
 <!DOCTYPE html>

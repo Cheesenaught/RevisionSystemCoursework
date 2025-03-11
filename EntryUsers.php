@@ -6,13 +6,13 @@
 </head>
 <body>
 <?php
-if(!isset($_COOKIE["PHPSESSID"]))
-{
+//makes sure a session is running
+if(!isset ($_SESSION["UserID"])){
   session_start();
-} 
+}
 ?>
-
 <form action="addusers.php" method = "POST">
+<!-- creates text boxes to input their details -->
   First name:<input type="text" name="Forename"><br>
   Last name:<input type="text" name="Surname"><br>
   Password:<input type="password" name="Password"><br>
@@ -21,7 +21,6 @@ if(!isset($_COOKIE["PHPSESSID"]))
   Gender:<select name="Gender">
     <option value="0">Male</option>
     <option value="1">Female</option>
-    <option value="2">Prefer not to say</option>
   </select>
   <br>
   <!--Next 3 lines create a radio button which we can use to select the Access Level-->
@@ -37,3 +36,4 @@ $stmt->execute();
 ?>
 </body>
 </html>
+

@@ -1,8 +1,5 @@
 <?php
-if(!isset($_COOKIE["PHPSESSID"]))
-{
-  session_start();
-} 
+session_start();
 include "connection.php";
 ?>
 <!DOCTYPE html>
@@ -14,17 +11,18 @@ include "connection.php";
   
 </head>
 <body>
-<?php include_once("navbar.php"); ?>
-
-<h1 style="text-align:left; padding-left: 25%;">Classes</h1>
+<?php 
+include_once("navbar.php");
+echo($_SESSION['ClassID']);
+if(isset ($_SESSION["ClassID"])){
+   $stmt = $conn->prepare("SELECT * FROM TblClasses WHERE ClassID = " . $_SESSION['ClassID']);
+}
+$stmt->execute();
+$row = $stmt->fetch(PDO::FETCH_ASSOC);
+?>
+<h1 style="text-align:left; padding-left: 25%;"><?php echo($row['ClassName']);?></h1>
 
 <br>
-<?echo($Classes)?>
-<? foreach ($Classes as $Class): ?>
-   <?echo($Class)?>
-   <button style="background-color:#7badf8" onclick="document.location='class.php'" onclick="<?$_SESSION['Class'] = $Class.ClassID; ?>">Add Class</button>
-   
-   <? $Class['ClassID']; ?>
 
 
 </body>
