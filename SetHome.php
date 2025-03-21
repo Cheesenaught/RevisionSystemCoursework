@@ -17,12 +17,7 @@ unset($_SESSION['ClassID']);
 if(isset ($_SESSION["UserID"])){
    //Creates SQL statment to retrieve what class' the user is part of from
    //the table TblUserClassInters
-   $stmt = $conn->prepare("SELECT ClassID, ClassName FROM TblClasses 
-      WHERE EXISTS 
-      (SELECT ClassID 
-      From TblUserClassInters 
-      WHERE UserID=" . $_SESSION['UserID'] . " 
-      AND TblUserClassInters.ClassID=TblClasses.ClassID  )" );
+   $stmt = $conn->prepare("SELECT SetID, SetName FROM TblSets");
 //runs the SQL Statment
 $stmt->execute();
 //uses while loop to display all class' that the user is part of
@@ -30,9 +25,9 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
    // Creates a form that directs the user to ClassPage.php once submitted
    // uses hidden type to bind the value while making sure it isnt changed
    echo('
-   <form action="ClassPage.php" method = "POST">
-   <input type="hidden" value=' . $row["ClassID"]  .' name="id">
-   <div class="col-sm-5" style="padding-left: 25%">'. $row["ClassName"] .'</div>
+   <form action="SetPage.php" method = "POST">
+   <input type="hidden" value=' . $row["SetID"]  .' name="id">
+   <div class="col-sm-5" style="padding-left: 25%">'. $row["SetName"] .'</div>
    <input type="submit"   value="Go to">
    </form><br>');
 }
@@ -41,7 +36,7 @@ else{
    header('Location: login.php');
 }
 ?>
-<button style="background-color:#7badf8" onclick="document.location='EntryClass.php'">Add Class</button>   
+<button style="background-color:#7badf8" onclick="document.location='EntrySet.php'">Add Set</button>   
 </body>
 </html>
 

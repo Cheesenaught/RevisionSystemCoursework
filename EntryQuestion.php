@@ -8,10 +8,10 @@
 <?php
 session_start();
 ?>
-
 <form action="addQuestion.php" method = "POST">
   Question:<input type="text" name="Question"><br>
   Answer:<input type="text" name="Answer"><br>
+  SetID:<input type="text" name="SetID"><br>
   <input type="submit" value="Add Question">
 </form>
 <?php

@@ -47,7 +47,7 @@ $stmt->closeCursor();
 //Creates the table TblAssignments*/
 $stmt = $conn->prepare("DROP TABLE IF EXISTS TblAssignments;
 CREATE TABLE TblAssignments
-(AssignmentID INT(4) NOT NULL PRIMARY KEY,
+(AssignmentID INT(4) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 ClassID INT(4) NOT NULL,
 SetID INT(4) NOT NULL,
 DueDate DATE NOT NULL,

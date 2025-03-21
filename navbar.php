@@ -29,7 +29,7 @@ include_once("functions.php");
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right"style="margin-top:15px">
-        <li><a href="setPage.html">Sets</a></li>
+        <li><a href="SetHome.php">Sets</a></li>
         <li><a href="classesHome.php">Classes</a></li>
         <li><a href="#Members">Assignments</a></li>
         <li><a href="settings.php"><img src="settings.png" alt="Settings" style="height: 25px; width: 25px;"></a></li>
@@ -48,6 +48,6 @@ include_once("functions.php");
     </div>
   </div>
 </nav>
-<br><br><br><br><br><br><br>
+<br><br><br>
 </body>
 </html>

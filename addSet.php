@@ -1,8 +1,8 @@
 <?php
 include_once("connection.php");
+session_start();
 
-//header('Location: homePage.php');
-    array_map("htmlspecialchars", $_POST);
+header('Location: homePage.php');
     $stmt = $conn->prepare("INSERT INTO TblSets (SetID,Subject,SetName,Open,UserID)VALUES (null,:Subject,:SetName,:Open,:UserID)");
     $stmt->bindParam(':Subject', $_POST["Subject"]);
     $stmt->bindParam(':SetName', $_POST["SetName"]);

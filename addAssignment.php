@@ -2,12 +2,12 @@
 include_once("connection.php");
 session_start();
 
-header('Location: assignment.php');
+//header('Location: EntryAssignment.php');
     array_map("htmlspecialchars", $_POST);
-    $stmt = $conn->prepare("INSERT INTO TblAssignments (AssignmentID,SetID,Description,DueDate)VALUES (null,:SetID,:Description,:DueDate,:)");
-    $stmt->bindParam(':AssignmentID', $_POST["AssignmentID"]);
-    $stmt->bindParam(':SetID', $_POST["SetID"]);
+    $stmt = $conn->prepare("INSERT INTO TblAssignments (AssignmentID,ClassID,SetID,DueDate,Description)VALUES (null,:ClassID,:SetID,:DueDate,:Description)");
     $stmt->bindParam(':Description', $_POST["Description"]);
+    $stmt->bindParam(':SetID', $_POST["SetID"]);
+    $stmt->bindParam(':ClassID', $_POST["ClassID"]);
     $stmt->bindParam(':DueDate', $_POST["DueDate"]);
     $stmt->execute();
     $conn=null;
