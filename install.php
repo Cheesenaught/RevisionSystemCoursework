@@ -71,7 +71,8 @@ $stmt = $conn->prepare("DROP TABLE IF EXISTS TblQuestions;
 CREATE TABLE TblQuestions 
 (QuestionID INT(4) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 Question VARCHAR(100) NOT NULL,
-SetID INT(4) NOT NULL)");
+Answer VARCHAR(100) NOT NULL,
+SetID INT(4) NOT NULL);");
 $stmt->execute();
 $stmt->closeCursor();
 

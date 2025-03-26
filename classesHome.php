@@ -1,16 +1,20 @@
 <?php
 session_start();
 include "connection.php";
+//makes sure that the user does not previosly have a class id assigned to the session as
+//this would automatically forward the user
 unset($_SESSION['ClassID']);
 ?>
 <!DOCTYPE html>
 <html>
 <head>
    <title>Classes</title>
+   <!-- links the stylesheet to the page-->
    <link rel="stylesheet" href="stylesheet.css">
 </head>
 <body>
-<?php include_once("navbar.php"); ?>
+<?php //addds the navbar to the page
+include_once("navbar.php"); ?>
 <h1 style="text-align:left; padding-left: 25%;">Classes</h1>
 <br>
 <?php
@@ -38,9 +42,11 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
 }
 }
 else{
+   //As the user can only see classes logged in it automatically forwards the user
    header('Location: login.php');
 }
 ?>
+<!--button for if the user wants to add a class-->
 <button style="background-color:#7badf8" onclick="document.location='EntryClass.php'">Add Class</button>   
 </body>
 </html>
